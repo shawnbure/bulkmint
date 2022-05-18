@@ -1,0 +1,14 @@
+accounts - INFO - Account.sync_nonce()
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): devnet-gateway.elrond.com:443
+urllib3.connectionpool - DEBUG - https://devnet-gateway.elrond.com:443 "GET /address/erd1hh7gte28hahk9htwlhzf3gretusckhrqf4y6xv5p9qwznhn7y4wswnzua3 HTTP/1.1" 200 332
+accounts - INFO - Account.sync_nonce() done: 54806
+root - DEBUG - EGLD-VAULT-794
+transactions - INFO - BunchOfTransactions.send: 1 transactions
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): devnet-gateway.elrond.com:443
+urllib3.connectionpool - DEBUG - https://devnet-gateway.elrond.com:443 "POST /transaction/send-multiple HTTP/1.1" 200 143
+transactions - INFO - Sent: 1
+transactions - INFO - TxsHashes: {'0': '194fc52c0acae4841a7b0ae1006b407f77ef5bfd3557979cc7d127e95abd1338'}
+accounts - INFO - Account.sync_nonce()
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): devnet-gateway.elrond.com:443
+urllib3.connectionpool - DEBUG - https://devnet-gateway.elrond.com:443 "GET /address/erd1hh7gte28hahk9htwlhzf3gretusckhrqf4y6xv5p9qwznhn7y4wswnzua3 HTTP/1.1" 200 332
+accounts - INFO - Account.sync_nonce() done: 54806

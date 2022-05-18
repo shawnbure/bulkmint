@@ -1,0 +1,43 @@
+Deploy the Contract to the Blockchain
+
+
+**PROD** erdpy --verbose contract deploy --bytecode="elrond_minting.wasm" --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+**TEST** erdpy --verbose contract deploy --bytecode="elrond_minting.wasm" --pem="testnet.pem" --gas-limit=200000000 --proxy="https://testnet-gateway.elrond.com" --chain="T" --recall-nonce --send
+**DEV** erdpy --verbose contract deploy --bytecode="elrond_minting.wasm" --pem="dev-wallet-owner.pem" --gas-limit=200000000 --proxy="https://devnet-gateway.elrond.com" --chain="D" --recall-nonce --send
+
+
+
+/**** UPDATE CONTRACT ONLY**********
+erdpy --verbose contract upgrade erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --bytecode="elrond_minting.wasm" --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+/***********DO NOT RUN**************
+
+Issue the Collection to the Contact - token name = EGLDVAULT 0x45474c445641554c54, ticker = ENFT 0x454e4654, token name = TESTTOKEN 0x54455354544f4b454e, ticker = TEST 0x54455354
+
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --function="issueToken" --arguments 0x45474c445641554c54 0x454e4654 --value 50000000000000000 --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+
+Set Contract NFT Creation Role for the Contract
+
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --function="setLocalRoles" --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+
+
+
+
+WITHDRAW BALANCE - withdrawContractEGLDBalance(value) - value is optional 
+
+
+WITHDRAW ALL
+
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --function="withdrawContractEGLDBalance" --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+
+
+WITHDRAW SOME - this represents withdrawing .5 egld
+
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --function="withdrawContractEGLDBalance" --arguments 500000000000000000 --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send  
+
+
+MOVE THE ORPHANDED NFT - move_nft_lacking_pricetag(nonce, receiver address)
+
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq85py59xyaszz6gzhr0lt94058n9p2epsyvvsnl6c7p --function="move_nft_lacking_pricetag" --arguments 946 0x8b8df1d18e62e290a59c21b4d4733d4f23325211db5cda2416dd7fd200fdd9ce --pem="onchainwallet.pem" --gas-limit=200000000 --proxy="https://gateway.elrond.com" --chain="1" --recall-nonce --send
+
+
+
